@@ -7,13 +7,13 @@
     "options_page": "options.html",
     
     "browser_action": {
- //       "default_icon": "128signal_on.png"
+        "default_icon": "icon_128.png",
+	"default_tilte": "Test Extension"
     },
 
-//    "icons": {
-//	"128" : "128signal_on.png",
-//	"19" : "signal_on.png"
-//    },
+    "icons": {
+	"128" : "icon_128.png"
+    },
 
     "background": {
 	"scripts": ["background.js"]
