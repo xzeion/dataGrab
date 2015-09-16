@@ -1,33 +1,25 @@
 {
-    "manifest_version": 2, 
-
-    "name": "DataGrab",
-    "description": "allows the user to copy data from a page with js selectors and turn it into an excell paste friendly string.",
-    "version": "1.0",
+    "manifest_version": 2,
+    "name":    "Test Extension",
+    "version": "0.0",
     "options_page": "options.html",
     
-    "browser_action": {
-        "default_icon": "icon_128.png",
-	"default_tilte": "Test Extension"
-    },
-
     "icons": {
-	"128" : "icon_128.png"
+    "128" : "icon_128.png"
     },
 
     "background": {
-	"scripts": ["background.js"]
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["*://*.stackoverflow.com/*"],
+        "js":      ["content.js"]
+    }],
+    "browser_action": {
+        "default_title": "Test Extension",
+        "default_icon": "icon_128.png"
     },
 
-    "content_scripts": [{
-	"matches": ["https://www.google.com/dfa/**"],
-	"js": ["content.js"]
-    }],
-
-    "permissions":[
-	"tabs",
-        "activeTab",
-	"notifications"
-    ]
-    
+    "permissions": ["activeTab"]
 }
